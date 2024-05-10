@@ -1,7 +1,7 @@
 import { DisplayValueHeader, Color } from 'pixel_combats/basic';
 import { Game, LeaderBoard, Teams, Ui, Properties, Spawns, Timers } from 'pixel_combats/room';
 
-const WaitingPlayersTime = 4;
+const WaitingPlayersTime = 6;
 const EndOfMatchTime = 1;
 
 const WaitingStateValue = "Waiting";
@@ -11,7 +11,7 @@ const mainTimer = Timers.GetContext().Get("Main");
 const stateProp = Properties.GetContext().Get("State");
 Ui.GetContext().MainTimerId.Value = mainTimer.Id;
 
-Teams.Add("FARM", "FARM", new Color(1, 1, 0, 2));
+Teams.Add("Фарм", "Фарм", new Color(1, 0, 0, 0));
 
 LeaderBoard.PlayerLeaderBoardValues = [
 	new DisplayValueHeader("Kills", "К", "К"),
@@ -19,7 +19,7 @@ LeaderBoard.PlayerLeaderBoardValues = [
 ];
 
 Teams.OnRequestJoinTeam.Add(function (p, t) { t.Add(p);
-    p.Properties.Kills.Value = 100000;
+    p.Properties.Kills.Value = 1000;
     p.Properties.Scores.Value = 100000;
 });
 Teams.OnPlayerChangeTeam.Add(function (p) { p.Spawns.Spawn()});
