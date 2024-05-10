@@ -1,0 +1,10 @@
+{
+  "Name": "Фарм сундуков и медалей (API 2.0)",
+  "Description": "Для работы нужно 2 человека",
+  "StartClientVersion": 532,
+  "MapLists": [
+    {
+      "MapListId": 1,
+    }
+  ]
+}
